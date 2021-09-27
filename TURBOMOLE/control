@@ -1,0 +1,90 @@
+$title
+$operating system unix
+$symmetry c1
+$redundant    file=coord
+$coord    file=coord
+$user-defined bonds    file=coord
+$atoms
+c  1-8,10-20,24-27,30-31,33-35,37-43,46,49-55,57-59                            \
+   basis =c TZVP                                                               \
+   jbas  =c TZVP
+n  9,28,32,56                                                                  \
+   basis =n TZVP                                                               \
+   jbas  =n TZVP
+o  21,47-48,62                                                                 \
+   basis =o TZVP                                                               \
+   jbas  =o TZVP
+h  22-23,29,36,44-45,60-61,63-84                                               \
+   basis =h TZVP                                                               \
+   jbas  =h TZVP
+$basis    file=basis
+$rundimensions
+   dim(fock,dens)=795816
+   natoms=84
+   nshell=606
+   nbf(CAO)=1260
+   nbf(AO)=1206
+   dim(trafo[SAO<-->AO/CAO])=1368
+   rhfshells=1
+$scfmo   file=mos
+$closed shells
+ a       1-183                                  ( 2 )
+$scfiterlimit       200
+$thize     0.10000000E-04
+$thime        5
+$scfdump
+$scfintunit
+ unit=30       size=0        file=twoint
+$scfdiis
+$scforbitalshift  automatic=.1
+$drvopt
+   cartesian  on
+   basis      off
+   global     off
+   hessian    on
+   dipole     on
+   nuclear polarizability
+$interconversion  off
+   qconv=1.d-7
+   maxiter=25
+$optimize
+   internal   on
+   redundant  on
+   cartesian  off
+   global     off
+   basis      off   logarithm
+$coordinateupdate
+   dqmax=0.3
+   interpolate  on
+   statistics    5
+$forceupdate
+   ahlrichs numgeo=0  mingeo=3 maxgeo=4 modus=<g|dq> dynamic fail=0.3
+   threig=0.005  reseig=0.005  thrbig=3.0  scale=1.00  damping=0.0
+$forceinit on
+   diag=default
+$energy    file=energy
+$grad    file=gradient
+$forceapprox    file=forceapprox
+$lock off
+$dft
+   functional b-lyp
+   gridsize   m3
+   weight derivatives
+$scfconv   8
+$scfdamp   start=4.00  step=0.050  min=0.50
+$ricore     2400
+$rij
+$jbas    file=auxbasis
+$marij
+$disp3
+$last step     ridft
+$last SCF energy change = -.16703325E-07
+$charge from ridft
+         -0.000 (not to be modified here)
+$dipole from ridft
+  x    -0.09044849520888    y     0.13328666873144    z    -0.40417430335394    a.u.
+   | dipole | =    1.1058963207  debye
+$optinfo       file=optinfo
+$hessapprox   file=hessapprox
+$orbital_max_rnorm 0.31815411015290E-03
+$end

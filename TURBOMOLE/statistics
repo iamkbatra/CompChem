@@ -1,0 +1,45 @@
+Mo 15. Mai 19:31:30 CEST 2017
+
+ DSCF STATISTICS OUTPUT :
+
+ integral neglect threshold       :  0.26E-12
+ integral storage threshold THIZE :  0.10E-04
+ integral storage threshold THIME :         5
+
+
+ --------------------    1.ITERATION  --------------------
+ norm of density matrix                :    17.0379959902    
+ total energy                          : -2290.9665694688    
+ one-electron energy                   : -15724.995052150    
+ two-electron energy                   :  7097.8847014721    
+ damping factor ttr                    :            4.000    
+
+ --------------------    2.ITERATION  --------------------
+ 
+  weight factors dlin for linear combination of density matrices :
+   1.0000034    
+ accerr=   2.000  crierr=1000.000  ilam=  0  grange= 0.0      chatol=   0.634
+
+ norm of difference density matrix     :   0.888414333078E-03
+ norm of simple difference density     :   0.890332006923E-03
+ norm of density matrix                :    17.0380543599    
+ total energy                          : -2290.9665694910    
+ one-electron energy                   : -15724.995022231    
+ two-electron energy                   :  7097.8846715311    
+ energy increment                      :          -0.2215E-07
+ damping factor ttr                    :            3.950    
+
+ --------------------    3.ITERATION  --------------------
+ 
+  weight factors dlin for linear combination of density matrices :
+   1.0000064       1.7648625    
+ accerr=   3.252  crierr=  10.000  ilam=  0  grange= 0.0      chatol=   0.446
+
+ norm of difference density matrix     :   0.244663710750E-03
+ norm of simple difference density     :   0.723969254312E-03
+ norm of density matrix                :    17.0381047156    
+ total energy                          : -2290.9657734907    
+ one-electron energy                   : -15724.995017221    
+ two-electron energy                   :  7097.8854625217    
+ energy increment                      :          -0.1376E-07
+ damping factor ttr                    :            3.900    
