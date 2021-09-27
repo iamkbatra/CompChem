@@ -1,0 +1,5 @@
+Steps for electronic structure calculation
+- Create an input as .d12 (see attached file)
+- Create a run as pbs or slurm
+- Submit the run as "qsub run" for pbs / "sbatch run" for slurm
+- Generate an output as .out (see attached file)
