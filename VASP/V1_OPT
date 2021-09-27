@@ -1,0 +1,10 @@
+Steps for electronic structure calculation
+- Create an input as "INCAR" (see attached file)
+- Set k-points as "KPOINTS" (see attached file)
+- Create a "POSCAR" includes lattice geometry and the atomic positions (see attached file)
+- Generate "POTCAR" contains the pseudopotential for each atomic species (see attached file) 
+- Create a run as pbs or slurm (see attached file, vasp.sh)
+- Submit the run as "qsub vasp.sh" for pbs / "sbatch vasp.sh" for slurm
+- Generate an output as OUTCAR (see attached file)
+- Final optimized coordinates can be obtained as CONTCAR (see attached file)
+- One must have these ".." 4 files in order to get started.
