@@ -1,0 +1,5 @@
+Steps for electronic structure calculation
+- Create an input as orca.inp (see attached file)
+- Create a run as pbs or slurm (see attached file, orca.example)
+- Submit the run as "qsub orca.example" for pbs / "sbatch orca.example" for slurm
+- Generate an output as orca.out (see attached file)
