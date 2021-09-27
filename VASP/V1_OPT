@@ -7,4 +7,4 @@ Steps for electronic structure calculation
 - Submit the run as "qsub vasp.sh" for pbs / "sbatch vasp.sh" for slurm
 - Generate an output as OUTCAR (see attached file)
 - Final optimized coordinates can be obtained as CONTCAR (see attached file)
-- One must have these ".." 4 files in order to get started.
+- One must have these "..." 4 files in order to get started.
