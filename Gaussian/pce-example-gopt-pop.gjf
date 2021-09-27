@@ -1,0 +1,15 @@
+%chk=pce-example-gopt-pop.chk	
+%nprocshared=20		
+%mem=64000MB
+#p b3lyp/tzvp opt empiricaldispersion=gd3bj pop=full
+
+pce-example optimization
+
+0 1
+Cl        -1.06150       -3.18100       -3.34950
+Cl         1.83710       -2.14250       -2.47060
+Cl         0.61160        0.17120       -1.17550
+C          0.38010       -1.27670       -2.08480
+C         -0.82620       -1.70610       -2.46520
+Cl        -2.27120       -0.83350       -2.08140
+
