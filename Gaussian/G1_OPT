@@ -1,0 +1,5 @@
+Steps for electronic structure calculation
+- Create an input as .gif (see attached file)
+- Create a run as pbs or slurm (see attached file)
+- Submit the run as "qsub run" for pbs / "sbatch run" for slurm
+- Generate an output as .log (see attached file)
