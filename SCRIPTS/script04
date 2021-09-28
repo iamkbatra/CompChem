@@ -1,0 +1,48 @@
+for FUNCTIONAL in PBE BP86 BLYP TPSS M06L PBE0 B3P B3LYP BHLYP TPSS0 M06 M062X CAM-B3LYP LC-BLYP wB97 wB97X
+do
+  cd $FUNCTIONAL-D3
+  echo $FUNCTIONAL-D3
+  grep -A 5 ABSORPTION\ SPECTRUM output | head -n6 | tail -n1 | awk '{print $3}'
+  grep -A 6 ABSORPTION\ SPECTRUM output | head -n7 | tail -n1 | awk '{print $3}'
+  cd ..
+
+  cd $FUNCTIONAL-D3-TDA
+  echo $FUNCTIONAL-D3-TDA
+  grep -A 5 ABSORPTION\ SPECTRUM output | head -n6 | tail -n1 | awk '{print $3}'
+  grep -A 6 ABSORPTION\ SPECTRUM output | head -n7 | tail -n1 | awk '{print $3}'
+  cd ..
+
+  cd $FUNCTIONAL-D3-sTDA
+  echo $FUNCTIONAL-D3-sTDA
+  grep -A 5 ABSORPTION\ SPECTRUM output | head -n6 | tail -n1 | awk '{print $3}'
+  grep -A 6 ABSORPTION\ SPECTRUM output | head -n7 | tail -n1 | awk '{print $3}'
+  cd ..
+
+  cd $FUNCTIONAL-D3-sTDA-l
+  echo $FUNCTIONAL-D3-sTDA-l
+  grep -A 5 ABSORPTION\ SPECTRUM output | head -n6 | tail -n1 | awk '{print $3}'
+  grep -A 6 ABSORPTION\ SPECTRUM output | head -n7 | tail -n1 | awk '{print $3}'
+  cd ..
+
+  cd $FUNCTIONAL-D3-sTDDFT
+  echo $FUNCTIONAL-D3-sTDDFT
+  grep -A 5 ABSORPTION\ SPECTRUM output | head -n6 | tail -n1 | awk '{print $3}'
+  grep -A 6 ABSORPTION\ SPECTRUM output | head -n7 | tail -n1 | awk '{print $3}'
+  cd ..
+
+  cd $FUNCTIONAL-D3-sTDDFT-l
+  echo $FUNCTIONAL-D3-sTDDFT-l
+  grep -A 5 ABSORPTION\ SPECTRUM output | head -n6 | tail -n1 | awk '{print $3}'
+  grep -A 6 ABSORPTION\ SPECTRUM output | head -n7 | tail -n1 | awk '{print $3}'
+  cd ..
+done
+
+for FUNCTIONAL in B2GP-PLYP B2PLYP mPW2PLYP CIS CISD
+do
+  cd $FUNCTIONAL
+  echo $FUNCTIONAL
+  grep -A 5 ABSORPTION\ SPECTRUM output | head -n6 | tail -n1 | awk '{print $3}'
+  grep -A 6 ABSORPTION\ SPECTRUM output | head -n7 | tail -n1 | awk '{print $3}'
+  cd ..
+done
+

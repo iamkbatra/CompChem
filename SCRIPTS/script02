@@ -1,0 +1,40 @@
+for FUNCTIONAL in BP86 BLYP PBE TPSS M06L B3P B3LYP PBE0 BHLYP TPSS0 M06 M062X wB97X wB97 LC-BLYP CAM-B3LYP
+do
+  cp -r "${FUNCTIONAL}-D3" ~/backup/Method_Validation/DAZnP
+  cd  ~/backup/Method_Validation/DAZnP/$FUNCTIONAL-D3
+  rm  FINISHED input.cis input.gbw input.prop input_property.txt orca.example slurm-*
+  cd /scratch/kamalbat/Method_Validation/DAZnP
+
+  cp -r "${FUNCTIONAL}-D3-TDA" ~/backup/Method_Validation/DAZnP
+  cd  ~/backup/Method_Validation/DAZnP/$FUNCTIONAL-D3-TDA
+  rm  FINISHED input.cis input.gbw input.prop input_property.txt orca.example slurm-*
+  cd /scratch/kamalbat/Method_Validation/DAZnP
+
+  cp -r "${FUNCTIONAL}-D3-sTDA" ~/backup/Method_Validation/DAZnP
+  cd  ~/backup/Method_Validation/DAZnP/$FUNCTIONAL-D3-sTDA
+  rm  FINISHED input.gbw input.prop input_property.txt orca.example slurm-*
+  cd /scratch/kamalbat/Method_Validation/DAZnP
+
+   cp -r "${FUNCTIONAL}-D3-sTDA-l" ~/backup/Method_Validation/DAZnP
+   cd ~/backup/Method_Validation/DAZnP/$FUNCTIONAL-D3-sTDA-l
+   rm  FINISHED input.gbw input.prop input_property.txt orca.example slurm-*
+   cd /scratch/kamalbat/Method_Validation/DAZnP
+
+   cp -r "${FUNCTIONAL}-D3-sTDDFT" ~/backup/Method_Validation/DAZnP
+   cd  ~/backup/Method_Validation/DAZnP/$FUNCTIONAL-D3-sTDDFT
+   rm  FINISHED input.gbw input.prop input_property.txt orca.example slurm-*
+   cd /scratch/kamalbat/Method_Validation/DAZnP
+
+   cp -r "${FUNCTIONAL}-D3-sTDDFT-l" ~/backup/Method_Validation/DAZnP
+   cd  ~/backup/Method_Validation/DAZnP/${FUNCTIONAL}-D3-sTDDFT-l
+   rm  FINISHED input.gbw input.prop input_property.txt orca.example slurm-*
+   cd /scratch/kamalbat/Method_Validation/DAZnP
+
+for METHOD in B2GP-PLYP B2PLYP mPW2PLYP CIS CISD
+do
+  cp -r ${METHOD} ~/backup/Method_Validation/DAZnP
+  cd  ~/backup/Method_Validation/DAZnP/$METHOD
+  rm  FINISHED input.cis input.gbw input.prop input_property.txt orca.example slurm-*
+  cd /scratch/kamalbat/Method_Validation/DAZnP
+done
+done

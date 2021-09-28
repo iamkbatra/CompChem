@@ -1,0 +1,39 @@
+for FUNCTIONAL in BP86 BLYP PBE TPSS M06L
+do
+  mkdir $FUNCTIONAL-D3
+  cat wB97X-D3/input | sed -e "s/wB97X/$FUNCTIONAL/g" > $FUNCTIONAL-D3/input
+  cp /home/kamalbat/bin/orca.example $FUNCTIONAL-D3
+  cd $FUNCTIONAL-D3
+  sbatch orca.example
+  cd ..
+  mkdir $FUNCTIONAL-D3-TDA
+  cat wB97X-D3-TDA/input | sed -e "s/wB97X/$FUNCTIONAL/g" > $FUNCTIONAL-D3-TDA/input
+  cp /home/kamalbat/bin/orca.example $FUNCTIONAL-D3-TDA
+  cd $FUNCTIONAL-D3-TDA
+  sbatch orca.example
+  cd ..
+  mkdir $FUNCTIONAL-D3-sTDA
+  cat wB97X-D3-sTDA/input | sed -e "s/wB97X/$FUNCTIONAL/g" > $FUNCTIONAL-D3-sTDA/input
+  cp /home/kamalbat/bin/orca.example $FUNCTIONAL-D3-sTDA
+  cd $FUNCTIONAL-D3-sTDA
+  sbatch orca.example
+  cd ..
+  mkdir $FUNCTIONAL-D3-sTDA-l
+  cat wB97X-D3-sTDA-l/input | sed -e "s/wB97X/$FUNCTIONAL/g" > $FUNCTIONAL-D3-sTDA-l/input
+  cp /home/kamalbat/bin/orca.example $FUNCTIONAL-D3-sTDA-l
+  cd $FUNCTIONAL-D3-sTDA-l
+  sbatch orca.example
+  cd ..
+  mkdir $FUNCTIONAL-D3-sTDDFT
+  cat wB97X-D3-sTDDFT/input | sed -e "s/wB97X/$FUNCTIONAL/g" > $FUNCTIONAL-D3-sTDDFT/input
+  cp /home/kamalbat/bin/orca.example $FUNCTIONAL-D3-sTDDFT
+  cd $FUNCTIONAL-D3-sTDDFT
+  sbatch orca.example
+  cd ..
+  mkdir $FUNCTIONAL-D3-sTDDFT-l
+  cat wB97X-D3-sTDDFT-l/input | sed -e "s/wB97X/$FUNCTIONAL/g" > $FUNCTIONAL-D3-sTDDFT-l/input
+  cp /home/kamalbat/bin/orca.example $FUNCTIONAL-D3-sTDDFT-l
+  cd $FUNCTIONAL-D3-sTDDFT-l
+  sbatch orca.example
+  cd ..
+done
