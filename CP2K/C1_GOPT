@@ -4,4 +4,4 @@ Steps for electronic structure calculation
 - Submit the run as "qsub CP2K.sh" for pbs / "sbatch CP2K.sh" for slurm
 - Keep necessary files in each calc. i.e. GTH_POTENTIALS, BASIS_MOLOPT, dftd3
 - Keep "StructureInUse.xyz" file as an input geometry / system of interest
-- Will get an output as .out (see attached file)
+- Generate an output as .out (see attached file)
