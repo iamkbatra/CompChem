@@ -2,6 +2,6 @@ Steps for electronic structure calculation
 - Create an input as Input-GEO_OPT (see attached file)
 - Create a run as pbs or slurm (see attached file, CP2K.sh)
 - Submit the run as "qsub CP2K.sh" for pbs / "sbatch CP2K.sh" for slurm
-- Generate an output as Output-GEO_OPT.out (see attached file)
 - Keep necessary files in each calc. i.e. GTH_POTENTIALS, BASIS_MOLOPT, dftd3
 - Keep "StructureInUse.xyz" file as an input geometry / system of interest
+- Will get an output as Output-GEO_OPT.out (see attached file)
