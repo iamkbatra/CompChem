@@ -1,0 +1,4 @@
+Assay's raw output from one sample is a set of fluorescence vs time curves. Each curve typically starts fairly level, rises, then levels off, 
+earlier when the target mutation is present than when it is absent. This data represents an experiment comparing three versions of the assay 
+('ConditionA', 'ConditionB', 'ConditionC'). Each version has the same 32 target mutations, and is tested on the same 32 known and 16 unknown samples. 
+Task is to identify the mutations in the known and unknown samples and assess which of the 3 assay versions is best overall.
