@@ -1,4 +1,4 @@
-# CompChem_Database
+# CompSci_Database
 
 Disclaimer: This database is for educational purposes only.
 
