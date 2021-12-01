@@ -1,0 +1,5 @@
+Benchmarking the Performance of Time Dependent Density Functional Methods for UV/Vis Spectal Properties of Porphyins and their Derivatives
+The DFT simulated geometery optimization of 12 porphyin molecules. Each molecule is tested with 100+ time dependent functional methods /including CIS 
+to calculate their absorption wavelength (nm). In literature their experimental absorption wavelengths for each compound is already reported. Task is to 
+thoroughly benchmark the performance of functional methods and find out which method is the best to reproduce the absorption wavelengths for all compounds 
+with minimum error and could be useful in future to predict the absorption wavelength of new related compounds.
