@@ -1,0 +1,17 @@
+#!/bin/bash
+#PBS -l nodes=1:ppn=20
+#PBS -r n
+#PBS -q fun
+#PBS -m e
+#PBS -j oe
+#PBS -l mem=64000MB
+#PBS -l walltime=90000000
+#PBS -l cput=900000000
+#PBS -N Eu_Favi_T
+
+
+echo $PBS_JOBID >jobid
+cd $PBS_O_WORKDIR
+
+
+/usr/local/bin/g09d01-bipbip-intel Eu_Favi_T.gjf
