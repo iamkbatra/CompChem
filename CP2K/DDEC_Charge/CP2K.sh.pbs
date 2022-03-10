@@ -1,0 +1,14 @@
+#!/bin/bash
+#PBS -l nodes=2:ppn=20
+#PBS -q damp
+#PBS -r n
+#PBS -m e
+#PBS -j oe
+#PBS -N CAU11AlOH  
+
+
+export OMP_NUM_THREADS=1
+
+cd $PBS_O_WORKDIR
+
+/usr/local/openmpi-4.0.1/bin/mpirun -n 36  /opt/CP2K/cp2k-6.1-openmpi4-0-1/cp2k.psmp  -i Input-RESP.inp > Output-RESP.out

@@ -1,0 +1,156 @@
+&GLOBAL
+  PROJECT  RESP_CAU11AlOH
+  PRINT_LEVEL LOW
+  RUN_TYPE ENERGY
+&END GLOBAL
+
+
+&FORCE_EVAL
+  METHOD QS
+
+  &PROPERTIES
+    &RESP
+      USE_REPEAT_METHOD
+      &SPHERE_SAMPLING
+        AUTO_VDW_RADII_TABLE UFF
+      &END SPHERE_SAMPLING
+      &PRINT
+       &PROGRAM_RUN_INFO
+       &END PROGRAM_RUN_INFO
+       &RESP_CHARGES_TO_FILE
+       &END
+       &V_RESP_CUBE
+       STRIDE 1
+       &END
+      &END PRINT
+    &END RESP
+    &FIT_CHARGE
+    &END FIT_CHARGE
+  &END PROPERTIES
+
+  &DFT
+    &POISSON
+      PERIODIC XYZ
+    &END POISSON
+    CHARGE 0
+    WFN_RESTART_FILE_NAME RESP_CAU11AlOH.wfn
+    BASIS_SET_FILE_NAME ./BASIS_MOLOPT
+    POTENTIAL_FILE_NAME ./GTH_POTENTIALS
+
+    &MGRID
+       NGRIDS       4
+       CUTOFF       400
+       REL_CUTOFF   60
+    &END MGRID
+
+    &QS
+      METHOD GPW
+       EPS_DEFAULT 1.0E-12
+       EXTRAPOLATION ASPC
+    &END QS
+
+    &SCF
+      SCF_GUESS RESTART
+      MAX_SCF   200
+      EPS_SCF 1.0e-7
+      EPS_DIIS 1.0e-1
+      &OUTER_SCF
+          EPS_SCF 1.0E-7
+          MAX_SCF 200
+      &END
+      &OT
+          MINIMIZER DIIS
+          PRECONDITIONER FULL_KINETIC
+          !ENERGY_GAP 0.001
+          SAFE_DIIS ON                 
+      &END OT
+    &END SCF
+
+    &XC
+      &XC_FUNCTIONAL PBE
+      &END XC_FUNCTIONAL
+      &vdW_POTENTIAL
+         POTENTIAL_TYPE PAIR_POTENTIAL
+         &PAIR_POTENTIAL
+            TYPE DFTD3
+            CALCULATE_C9_TERM .TRUE.
+            PARAMETER_FILE_NAME ./dftd3.dat
+            REFERENCE_FUNCTIONAL PBE
+            !R_CUTOFF 8.
+            EPS_CN 0.01
+            LONG_RANGE_CORRECTION .TRUE.
+            SHORT_RANGE_CORRECTION .TRUE.
+         &END PAIR_POTENTIAL
+
+      &END vdW_POTENTIAL
+    &END XC
+    &PRINT
+      &MO
+        &EACH
+          QS_SCF 500
+        &END
+        EIGENVALUES
+        OCCUPATION_NUMBERS
+      &END
+      &MO_CUBES
+         NHOMO 1
+         NLUMO 1
+         WRITE_CUBE F
+      &END MO_CUBES
+      &E_DENSITY_CUBE
+       STRIDE 1
+      &END E_DENSITY_CUBE
+      &V_HARTREE_CUBE   !The QM potential 
+       STRIDE 1
+      &END V_HARTREE_CUBE
+    &END PRINT
+  &END DFT
+  &PRINT
+    &FORCES ON
+    &END
+  &END
+
+  &SUBSYS
+    &CELL
+       ABC 6.611100   12.888800  20.019699
+       ALPHA_BETA_GAMMA  90.000000   90.000000  90.000000
+       PERIODIC XYZ
+    &END CELL
+
+   &KIND Al
+      BASIS_SET  DZVP-MOLOPT-SR-GTH-q3 
+      POTENTIAL  GTH-PBE-q3
+    &END
+
+    &KIND  H
+      BASIS_SET  TZV2P-MOLOPT-GTH-q1
+      POTENTIAL  GTH-PBE-q1
+    &END
+
+    &KIND  C
+      BASIS_SET  TZV2P-MOLOPT-GTH-q4
+      POTENTIAL  GTH-PBE-q4
+    &END
+
+    &KIND  O
+      BASIS_SET  TZV2P-MOLOPT-GTH-q6
+      POTENTIAL  GTH-PBE-q6
+    &END
+
+    &KIND  S
+      BASIS_SET  TZV2P-MOLOPT-GTH-q6
+      POTENTIAL  GTH-PBE-q6
+    &END
+
+    &TOPOLOGY
+      COORD_FILE_FORMAT CIF
+      COORD_FILE_NAME ./StructureInUse.cif
+     &GENERATE
+      REORDER .FALSE.
+     &END GENERATE
+    &END TOPOLOGY
+
+  &END SUBSYS
+  STRESS_TENSOR ANALYTICAL
+&END FORCE_EVAL
+
